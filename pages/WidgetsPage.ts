@@ -21,6 +21,7 @@ export class WidgetsPage {
     for (const { locator, expectedText } of elementsToTest) {
       await expect(locator).not.toHaveAttribute('aria-describedby');
       await locator.hover();
+      await this.page.waitForTimeout(100); // Wait for the attribute to be set
       await expect(locator).toHaveAttribute('aria-describedby');
       const tooltipId = await locator.getAttribute('aria-describedby');
       const tooltip = this.page.locator(`#${tooltipId}`);

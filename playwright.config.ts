@@ -42,21 +42,21 @@ export default defineConfig({
       name: 'chromium',
 
       use: {
-         //...devices['Desktop Chrome'] 
-         viewport: null,
-        },
+        //...devices['Desktop Chrome'] 
+        viewport: null,
+      },
     },
 
     {
       name: 'firefox',
       use: {
         viewport: null, // ✅ Désactive la gestion automatique du viewport
-        launchOptions: {
-          args: ["--start-fullscreen"], // ✅ Ajoute le mode plein écran pour Firefox
-        },
+        // launchOptions: {
+        //   args: ["--start-fullscreen"], // ✅ Ajoute le mode plein écran pour Firefox
       },
     },
-    
+
+
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
@@ -90,4 +90,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
- 
